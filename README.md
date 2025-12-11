@@ -6,6 +6,61 @@ l'implèmentation s'appuie sur l'heuristique de Warnsdorf.
 
 [Problème du cavalier](https://fr.wikipedia.org/wiki/Problème_du_cavalier)
 
+# prerequis
+
+## Xcode Command Line Tools
+
+```bash
+$> xcode-select --install
+```
+
+## Homebrew (si pas déjà installé)
+
+```bash
+$> /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+## Installation de SDL3 (+ image + ttf)
+
+### Installations
+
+```bash
+$> brew update
+$> brew install sdl3 sdl3_image sdl3_ttf
+```
+
+### Vérifications
+
+```bash
+$> brew info sdl3
+$> brew info sdl3_image
+$> brew info sdl3_ttf
+```
+
+Les headers se retrouveront typiquement dans :
+ - /opt/homebrew/include/SDL3/…
+ - et les libs dans /opt/homebrew/lib/libSDL3*.dylib
+
+### Installation de cmake
+
+```bash
+$> brew update
+$> brew install cmake
+```
+
+### Installation de SDL3_mixer
+
+```bash
+$> git clone https://github.com/libsdl-org/SDL_mixer.git
+$> cd SDL_mixer
+```
+
+```bash
+$> cmake -S . -B build
+$> cmake --build build
+$> sudo cmake --install build --prefix /usr/local
+```
+
 # build
 ```bash
 $> make
